@@ -83,12 +83,12 @@ namespace DotNet_API.DataModels
         public bool isArchived { get; set; }
 
 
-        // Navigation properties
-        public Client? Client { get; set; }
+        //// Navigation properties
+        //public Client? Client { get; set; }
 
 
-        public InvoiceTemplate? InvoiceTemplate { get; set; }
+        //public InvoiceTemplate? InvoiceTemplate { get; set; }
 
-        public ICollection<InvoiceItem> Items { get; set; } = new List<InvoiceItem>();
+        //public ICollection<InvoiceItem> Items { get; set; } = new List<InvoiceItem>();
     }
 }

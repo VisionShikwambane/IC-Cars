@@ -12,7 +12,7 @@ namespace DotNet_API.DataModels
 
         [Required]
         [MaxLength(500)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
         [Column(TypeName = "decimal(18,2)")]
@@ -25,6 +25,6 @@ namespace DotNet_API.DataModels
         public int InvoiceId { get; set; }
 
 
-        public Invoice Invoice { get; set; }
+        public Invoice? Invoice { get; set; }
     }
 }

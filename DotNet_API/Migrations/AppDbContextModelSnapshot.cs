@@ -22,6 +22,80 @@ namespace DotNet_API.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("DotNet_API.DataModels.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BodyType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FuelType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Make")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("Mileage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("Transmission")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("DotNet_API.DataModels.CarImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("imageUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CarImages");
+                });
+
             modelBuilder.Entity("DotNet_API.DataModels.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -56,42 +130,6 @@ namespace DotNet_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("clients");
-                });
-
-            modelBuilder.Entity("DotNet_API.DataModels.EmailSettings", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("DefaultFromEmail")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("DefaultFromName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Port")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SmtpServer")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EmailSettings");
                 });
 
             modelBuilder.Entity("DotNet_API.DataModels.Invoice", b =>
@@ -280,25 +318,21 @@ namespace DotNet_API.Migrations
 
             modelBuilder.Entity("DotNet_API.DataModels.Invoice", b =>
                 {
-                    b.HasOne("DotNet_API.DataModels.Client", "Client")
+                    b.HasOne("DotNet_API.DataModels.Client", null)
                         .WithMany("Invoices")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DotNet_API.DataModels.InvoiceTemplate", "InvoiceTemplate")
+                    b.HasOne("DotNet_API.DataModels.InvoiceTemplate", null)
                         .WithMany("Invoices")
                         .HasForeignKey("InvoiceTemplateId");
-
-                    b.Navigation("Client");
-
-                    b.Navigation("InvoiceTemplate");
                 });
 
             modelBuilder.Entity("DotNet_API.DataModels.InvoiceItem", b =>
                 {
                     b.HasOne("DotNet_API.DataModels.Invoice", "Invoice")
-                        .WithMany("Items")
+                        .WithMany()
                         .HasForeignKey("InvoiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -309,11 +343,6 @@ namespace DotNet_API.Migrations
             modelBuilder.Entity("DotNet_API.DataModels.Client", b =>
                 {
                     b.Navigation("Invoices");
-                });
-
-            modelBuilder.Entity("DotNet_API.DataModels.Invoice", b =>
-                {
-                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("DotNet_API.DataModels.InvoiceTemplate", b =>

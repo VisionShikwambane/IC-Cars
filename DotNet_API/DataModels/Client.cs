@@ -12,21 +12,21 @@ namespace DotNet_API.DataModels
 
         [Required]
         [MaxLength(255)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
         [EmailAddress]
         [MaxLength(255)]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [Phone]
         [MaxLength(50)]
-        public string Phone { get; set; }
+        public string Phone { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(500)]
-        public string Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
         public int? UserId { get; set; }
 

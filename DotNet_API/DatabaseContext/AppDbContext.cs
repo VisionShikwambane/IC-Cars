@@ -21,14 +21,26 @@ namespace DotNet_API.DatabaseContext
 
         public DbSet<InvoiceTemplate> InvoiceTemplates { get; set; }
 
-        public DbSet<EmailSettings> EmailSettings { get; set; }
+       // public DbSet<EmailSettings> EmailSettings { get; set; }
+
+        public DbSet<Car> Cars { get; set; }
+
+
+        public DbSet<CarImage> CarImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             // Example: Configuring an entity
-         
+
+            modelBuilder.Entity<Car>()
+           .HasMany(c => c.CarImages)
+           .WithOne(i => i.Car)
+           .HasForeignKey(i => i.CarId)
+           .OnDelete(DeleteBehavior.Cascade); // Enforce Cascade Delete
+
+
         }
     }
 }

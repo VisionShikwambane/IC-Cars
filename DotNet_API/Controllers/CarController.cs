@@ -10,9 +10,9 @@ namespace DotNet_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class InvoiceController : BaseController<InvoiceRepository, Invoice, InvoiceDto>
+    public class CarController : BaseController<CarRepository, Car, CarDto>
     {
-        public InvoiceController(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+        public CarController(AppDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
 
         }

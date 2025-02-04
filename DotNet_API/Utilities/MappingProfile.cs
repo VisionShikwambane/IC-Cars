@@ -16,8 +16,9 @@ namespace DotNet_API.Utilities
 
             CreateMap<InvoiceTemplateDto, InvoiceTemplate>().ReverseMap();
 
+            CreateMap<CarDto, Car>().ReverseMap();
 
-
+            CreateMap<CarImageDto, CarImage>().ReverseMap();
         }
     }
 }
