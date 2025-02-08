@@ -2,3 +2,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Style dropdowns */
+.dropdown {
+    cursor: pointer;
+  }
+  
+  .dropdown:hover {
+    background-color: #E0BA65;
+    color: black;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  ul li:hover {
+    background-color: #E0BA65;
+    color: black;
+  }
+  /* Ensure dropdown lists do not take up too much space */
+ul {
+    max-height: 240px; /* Same as Tailwind's max-h-60 */
+    overflow-y: auto;
+  }
+  
+  /* Improve scrollbars for better UX */
+  ul::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ul::-webkit-scrollbar-thumb {
+    background-color: #C9A247;
+    border-radius: 10px;
+  }
+  
+  ul::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  

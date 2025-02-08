@@ -10,10 +10,17 @@ import { CommonModule } from '@angular/common';
 })
 export class UserNavbarComponent {
 
-  isOpen = false;
+  isOpen: boolean = false;
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
 }

@@ -1,0 +1,120 @@
+<div class="container mx-auto py-10 px-6">
+    <!-- Filters Section -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-white animate-fade-in">
+      <h2 class="text-2xl font-bold text-gold mb-4">Filter Cars</h2>
+      
+      <!-- Toggle Button for Mobile -->
+      <button class="md:hidden px-4 py-2 bg-gold text-black font-bold rounded-lg shadow-md hover:bg-darkgold transition-all duration-300" (click)="toggleFilters()">
+        {{ filtersVisible ? 'Hide Filters' : 'Show Filters' }}
+      </button>
+      
+      <!-- Filters Form (Collapsible on Mobile) -->
+      <div [ngClass]="{'hidden': !filtersVisible, 'block': filtersVisible, 'md:block': true}" class="mt-4">
+        <form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          
+          <!-- Make -->
+          <div>
+            <label class="text-gold font-semibold">Make/Brand</label>
+            <select [(ngModel)]="filters.make" [ngModelOptions]="{standalone: true}" class="w-full p-3 bg-white text-black rounded-lg">
+              <option value="">Any</option>
+              <option *ngFor="let make of makes">{{ make }}</option>
+            </select>
+          </div>
+    
+          <!-- Model -->
+          <div>
+            <label class="text-gold font-semibold">Model</label>
+            <input [(ngModel)]="filters.model" [ngModelOptions]="{standalone: true}" type="text" placeholder="Enter model..." class="w-full p-3 bg-white text-black rounded-lg"/>
+          </div>
+    
+          <!-- Year -->
+          <div>
+            <label class="text-gold font-semibold">Year Range</label>
+            <input [(ngModel)]="filters.year" [ngModelOptions]="{standalone: true}" type="text" placeholder="2015 - 2024" class="w-full p-3 bg-white text-black rounded-lg"/>
+          </div>
+    
+          <!-- Price Range -->
+          <div>
+            <label class="text-gold font-semibold">Price Range (Min - Max)</label>
+            <input [(ngModel)]="filters.price" [ngModelOptions]="{standalone: true}" type="text" placeholder="R100,000 - R1,000,000" class="w-full p-3 bg-white text-black rounded-lg"/>
+          </div>
+    
+          <!-- Body Type -->
+          <div>
+            <label class="text-gold font-semibold">Body Type</label>
+            <select [(ngModel)]="filters.bodyType" [ngModelOptions]="{standalone: true}" class="w-full p-3 bg-white text-black rounded-lg">
+              <option value="">Any</option>
+              <option *ngFor="let type of bodyTypes">{{ type }}</option>
+            </select>
+          </div>
+    
+          <!-- Fuel Type -->
+          <div>
+            <label class="text-gold font-semibold">Fuel Type</label>
+            <select [(ngModel)]="filters.fuelType" [ngModelOptions]="{standalone: true}" class="w-full p-3 bg-white text-black rounded-lg">
+              <option value="">Any</option>
+              <option *ngFor="let fuel of fuelTypes">{{ fuel }}</option>
+            </select>
+          </div>
+    
+          <!-- Transmission -->
+          <div>
+            <label class="text-gold font-semibold">Transmission</label>
+            <select [(ngModel)]="filters.transmission" [ngModelOptions]="{standalone: true}" class="w-full p-3 bg-white text-black rounded-lg">
+              <option value="">Any</option>
+              <option *ngFor="let transmission of transmissions">{{ transmission }}</option>
+            </select>
+          </div>
+    
+          <!-- Mileage -->
+          <div>
+            <label class="text-gold font-semibold">Mileage (Max)</label>
+            <input [(ngModel)]="filters.mileage" [ngModelOptions]="{standalone: true}" type="text" placeholder="Max 100,000 km" class="w-full p-3 bg-white text-black rounded-lg"/>
+          </div>
+    
+          <!-- Condition -->
+          <div>
+            <label class="text-gold font-semibold">Condition</label>
+            <select [(ngModel)]="filters.condition" [ngModelOptions]="{standalone: true}" class="w-full p-3 bg-white text-black rounded-lg">
+              <option value="">Any</option>
+              <option *ngFor="let condition of conditions">{{ condition }}</option>
+            </select>
+          </div>
+          
+          <!-- Search Button -->
+          <div class="col-span-full flex justify-center mt-4">
+            <button (click)="applyFilters()" class="px-6 py-3 bg-gold text-black font-bold rounded-lg shadow-lg hover:bg-darkgold transition-all duration-300">
+              Search Cars 🚗
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <!-- 🚗 Cars Listing (Guaranteed 2 Rows, 3 Cars Per Row) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+      <div *ngFor="let car of paginatedCars" class="bg-white p-4 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 animate-slide-up">
+        <img [src]="car.image" alt="Car Image" class="w-full h-40 object-cover rounded-lg"/>
+        <h3 class="text-lg font-bold text-gray-900 mt-2">{{ car.make }} {{ car.model }}</h3>
+        <p class="text-gray-700">Year: {{ car.year }} | {{ car.bodyType }}</p>
+        <p class="text-gray-700">Fuel: {{ car.fuelType }} | {{ car.transmission }}</p>
+        <p class="text-gray-900 font-bold">R{{ car.price | number }}</p>
+        
+        <!-- View Details Button -->
+        <div class="mt-4 text-center">
+          <button class="px-6 py-2 bg-gold text-black font-bold rounded-lg shadow-md hover:bg-darkgold transition-all duration-300">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <div class="flex justify-center mt-6 space-x-2">
+      <button *ngFor="let page of totalPagesArray" (click)="changePage(page)" 
+        class="px-4 py-2 rounded-lg transform transition-all duration-300 hover:scale-110" 
+        [ngClass]="{'bg-gold text-black': currentPage === page, 'bg-gray-700 text-white': currentPage !== page}">
+        {{ page }}
+      </button>
+    </div>
+  </div>

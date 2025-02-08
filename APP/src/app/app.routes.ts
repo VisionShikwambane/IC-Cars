@@ -11,7 +11,8 @@ export const routes: Routes = [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', loadComponent:  () =>import("./user/home/home.component").then(c=>c.HomeComponent) },
         { path: 'car-service', loadComponent:  () =>import("./user/car-service/car-service.component").then(c=>c.CarServiceComponent) },
-        { path: 'car-parts', loadComponent:  () =>import("./user//car-parts/car-parts.component").then(c=>c.CarPartsComponent) },
+        { path: 'car-parts', loadComponent:  () =>import("./user/car-parts/car-parts.component").then(c=>c.CarPartsComponent) },
+        { path: 'cars', loadComponent:  () =>import("./user/cars/cars.component").then(c=>c.CarsComponent) },
         ]
       },
     

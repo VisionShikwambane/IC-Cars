@@ -19,7 +19,7 @@
       </p>
   
       <!-- Car Filter Form -->
-      <div class="bg-black bg-opacity-80 backdrop-blur-lg p-6 rounded-xl shadow-lg mt-8 w-full max-w-4xl animate-slide-up">
+      <div class="bg-black bg-opacity-80 backdrop-blur-lg p-6 rounded-xl shadow-lg mt-8 w-full max-w-6xl animate-slide-up">
         <form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <!-- Make -->
           <div>
@@ -54,7 +54,7 @@
           </div>
   
           <!-- Variant -->
-          <div>
+          <!-- <div>
             <label class="text-gold text-lg font-semibold">Variant</label>
             <select class="w-full p-3 rounded-lg bg-gray-900 text-white border border-gold focus:ring-2 focus:ring-darkgold">
               <option>Select Variant</option>
@@ -63,17 +63,31 @@
               <option>Hybrid</option>
               <option>Electric</option>
             </select>
-          </div>
+          </div> -->
   
           <!-- Price Range -->
-          <div class="md:col-span-3">
-            <label class="text-gold text-lg font-semibold">Price Range (in Rands)</label>
-            <div class="flex items-center space-x-4">
-              <span class="text-white font-semibold">R100,000</span>
-              <input type="range" min="100000" max="5000000" class="w-full cursor-pointer accent-darkgold"/>
-              <span class="text-white font-semibold">R5,000,000</span>
-            </div>
-          </div>
+          <!-- Price Range (Updated to Select) -->
+           <!-- Price Range (Updated with Realistic Ranges) -->
+<div class="md:col-span-3">
+  <label class="text-gold text-lg font-semibold">Price Range (in Rands)</label>
+  <select class="w-full p-3 rounded-lg bg-gray-900 text-white border border-gold focus:ring-2 focus:ring-darkgold">
+    <option>Select Price Range</option>
+    <option>R0 - R100,000</option>
+    <option>R100,001 - R250,000</option>
+    <option>R250,001 - R500,000</option>
+    <option>R500,001 - R750,000</option>
+    <option>R750,001 - R1,000,000</option>
+    <option>R1,000,001 - R1,500,000</option>
+    <option>R1,500,001 - R2,000,000</option>
+    <option>R2,000,001 - R3,000,000</option>
+    <option>R3,000,001 - R5,000,000</option>
+    <option>Above R5,000,000</option>
+  </select>
+</div>
+
+
+  
+          
   
           <!-- Buttons -->
           <div class="md:col-span-3 flex justify-center">
