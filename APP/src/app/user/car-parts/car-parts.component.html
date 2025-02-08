@@ -1,0 +1,57 @@
+<div class="bg-gray-100 text-black">
+    <!-- Hero Section -->
+    <div class="relative w-full h-[500px]">
+      <img src="car_part_background.jpg" alt="Car Parts" class="w-full h-full object-cover opacity-70" />
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl sm:text-6xl text-gold font-bold drop-shadow-lg animate-fade-in">
+          High-Quality Car Parts 🚗🔩
+        </h1>
+        <p class="text-lg sm:text-xl text-white max-w-3xl mt-4">
+            Find genuine, top-quality car parts for performance, durability, and safety.
+          </p>
+          
+       
+      </div>
+    </div>
+  
+    <!-- About Our Car Parts -->
+    <div class="py-12 px-6 max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl text-gold font-bold mb-6 animate-fade-in">Only the Best Parts for Your Vehicle</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        At **[Brand Name]**, we offer a wide range of **genuine and high-performance car parts** to ensure your vehicle
+        runs smoothly. Whether you need **replacement parts, performance upgrades, or accessories**, we have you covered.
+      </p>
+    </div>
+  
+    <!-- Featured Car Parts Section -->
+    <div class="max-w-6xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Car Parts List -->
+          <div *ngFor="let part of carParts" class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out animate-slide-up">
+            <img [src]="part.image" [alt]="part.name" class="w-full h-40 object-cover rounded-lg mb-4 shadow-md" />
+            <h3 class="text-xl text-gold font-semibold">{{ part.name }}</h3>
+            <p class="text-gray-700">{{ part.description }}</p>
+          </div>
+      
+          <!-- "AND MORE" Block -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg flex items-center justify-center transform hover:scale-105 transition duration-300 ease-in-out animate-slide-up">
+            <h3 class="text-2xl text-gold font-bold">AND MORE...</h3>
+          </div>
+        </div>
+      </div>
+      
+    <!-- CTA Section -->
+    <div class="py-10 bg-gray-900 text-center text-white">
+        <h2 class="text-3xl text-gold font-bold mb-4 animate-fade-in">Looking for a Specific Car Part? 🔍</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Not sure if we have the part you need? Contact us today, and our team will assist you in finding the perfect part for your car.
+        </p>
+        <div class="mt-6">
+          <a href="/contact-us" class="px-6 py-3 bg-gold text-black font-bold rounded-lg shadow-lg hover:bg-darkgold transition-all duration-300">
+            Contact Us to Check Availability 📞
+          </a>
+        </div>
+      </div>
+      
+  </div>
+  
