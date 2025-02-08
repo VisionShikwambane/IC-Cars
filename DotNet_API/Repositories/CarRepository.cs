@@ -21,8 +21,7 @@ namespace DotNet_API.Repositories
             {
                 var entities = await dbContext.Cars.Include(c => c.CarImages).ToListAsync();
                 var carDtos = mapper.Map<IEnumerable<CarDto>>(entities);
-                
-          
+
                 return carDtos;
             }
 

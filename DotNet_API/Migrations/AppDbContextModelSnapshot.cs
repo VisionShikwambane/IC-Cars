@@ -87,11 +87,13 @@ namespace DotNet_API.Migrations
                     b.Property<int>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<string>("imageUrl")
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CarId");
 
                     b.ToTable("CarImages");
                 });
@@ -316,6 +318,17 @@ namespace DotNet_API.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("DotNet_API.DataModels.CarImage", b =>
+                {
+                    b.HasOne("DotNet_API.DataModels.Car", "Car")
+                        .WithMany("CarImages")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+                });
+
             modelBuilder.Entity("DotNet_API.DataModels.Invoice", b =>
                 {
                     b.HasOne("DotNet_API.DataModels.Client", null)
@@ -338,6 +351,11 @@ namespace DotNet_API.Migrations
                         .IsRequired();
 
                     b.Navigation("Invoice");
+                });
+
+            modelBuilder.Entity("DotNet_API.DataModels.Car", b =>
+                {
+                    b.Navigation("CarImages");
                 });
 
             modelBuilder.Entity("DotNet_API.DataModels.Client", b =>
