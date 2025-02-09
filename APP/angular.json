@@ -20,15 +20,11 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-     "assets": [
-      "src/_redirects",
-      
-    "src/favicon.ico",
-    "src/assets"
-]
-
-       
-           ,
+            "assets": [
+              "src/_redirects",
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               "src/styles.css"
             ],
@@ -88,13 +84,9 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/_redirects",
-    "src/favicon.ico",
-    "src/assets"
-]
-
-
-           
-         ,
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               "src/styles.css"
             ],
