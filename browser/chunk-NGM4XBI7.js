@@ -1,0 +1,1 @@
+import{Ma as o,Na as i,Ua as a,X as t,ab as c}from"./chunk-7TKTVM2N.js";var p=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-invoice"]],standalone:!0,features:[c],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),a(1,"invoice works!"),i())}})};export{p as InvoiceComponent};

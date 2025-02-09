@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/",
+    "/admin",
+    "/admin/invoice",
+    "/car-parts",
+    "/car-service",
+    "/cars",
+    "/home"
+  ]
+}
