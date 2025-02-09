@@ -15,17 +15,17 @@ export class CarPartsComponent {
     {
       name: 'Performance Car Battery',
       description: 'Long-lasting, high-performance battery for all car models.',
-      image: '/car_battery.jpg',
+      image: 'assets/car_battery.jpg',
     },
     {
       name: 'Premium Brake Pads',
       description: 'High-quality brake pads for better stopping power and safety.',
-      image: '/brake_pads.jpg',
+      image: 'assets/brake_pads.jpg',
     },
     {
       name: 'Luxury Leather Seat Covers',
       description: 'Durable, stylish, and comfortable leather seat covers.',
-      image: '/seat_cover.jpg',
+      image: 'assets/seat_cover.jpg',
     },
   ];
 
