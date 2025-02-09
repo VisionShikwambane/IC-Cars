@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,10 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class UserNavbarComponent {
 
+
+  constructor(private cdr: ChangeDetectorRef) {}
+  
   isOpen: boolean = false;
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
+    this.cdr.detectChanges();
   }
 
   scrollToSection(sectionId: string) {
