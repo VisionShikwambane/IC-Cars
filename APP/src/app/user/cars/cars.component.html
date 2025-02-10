@@ -1,4 +1,4 @@
-<div class="container mx-auto py-10 px-6">
+<div class="container mx-auto pt-20 py-10 px-6">
     <!-- Filters Section -->
     <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-white animate-fade-in">
       <h2 class="text-2xl font-bold text-gold mb-4">Filter Cars</h2>
@@ -94,7 +94,7 @@
     <!-- 🚗 Cars Listing (Guaranteed 2 Rows, 3 Cars Per Row) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
       <div *ngFor="let car of paginatedCars" class="bg-white p-4 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 animate-slide-up">
-        <img src="assets/car.image" alt="Car Image" class="w-full h-40 object-cover rounded-lg"/>
+        <img [src]="car.image" alt="Car Image" class="w-full h-40 object-cover rounded-lg"/>
         <h3 class="text-lg font-bold text-gray-900 mt-2">{{ car.make }} {{ car.model }}</h3>
         <p class="text-gray-700">Year: {{ car.year }} | {{ car.bodyType }}</p>
         <p class="text-gray-700">Fuel: {{ car.fuelType }} | {{ car.transmission }}</p>

@@ -14,13 +14,13 @@
   
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
-          <a routerLink="/home" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Home</a>
-          <a href="javascript:void(0)" (click)="scrollToSection('about-us')" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">About Us</a>
+          <a routerLink="" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Home</a>
+          <a routerLink="/about"  class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">About Us</a>
           <a routerLink="/cars" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Showroom</a>
           <a routerLink="#" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Our Brand</a>
           <a routerLink="/car-service" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Car Service</a>
           <a routerLink="/car-parts" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Car Parts</a>
-          <a routerLink="#" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Contact</a>
+          <a routerLink="/contact" class="text-lg font-semibold transition-all duration-300 text-gold hover:text-darkgold">Contact</a>
         </div>
   
         <!-- Mobile Menu Button -->
@@ -43,10 +43,13 @@
         ✖
       </button>
   
-      <a href="#" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Home</a>
-      <a href="#" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">About Us</a>
-      <a href="#" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Showroom</a>
-      <a href="#" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Contact</a>
+      <a routerLink="" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Home</a>
+      <a routerLink="/about" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">About Us</a>
+      <a routerLink="/cars" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Showroom</a>
+      <a routerLink="#"  class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Our Brand</a>
+      <a routerLink="/car-service"   class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Car Services</a>
+      <a routerLink="/car-parts"  class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Car Parts</a>
+      <a routerLink="/contact" class="text-lg font-semibold text-gold hover:text-darkgold transition-all duration-300" (click)="toggleMenu()">Contact</a>
     </div>
   </div>
   

@@ -33,15 +33,15 @@ export class CarsComponent {
   conditions = ["New", "Used", "Certified Pre-Owned"];
 
   cars = [
-    { make: "Toyota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "car1.jpg" },
-    { make: "BMW", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "car2.jpg" },
-    { make: "Ford", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "car3.jpg" },
-    { make: "Toyota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "car1.jpg" },
-    { make: "BMssW", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "car2.jpg" },
-    { make: "Forssd", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "car3.jpg" },
-    { make: "Toyffota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "car1.jpg" },
-    { make: "BM2W", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "car2.jpg" },
-    { make: "Foddrd", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "car3.jpg" }
+    { make: "Toyota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "assets/car1.jpg" },
+    { make: "BMW", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "assets/car2.jpg" },
+    { make: "Ford", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "assets/car3.jpg" },
+    { make: "Toyota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "assets/car1.jpg" },
+    { make: "BMssW", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "assets/car2.jpg" },
+    { make: "Forssd", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "assets/car3.jpg" },
+    { make: "Toyffota", model: "Corolla", year: 2022, price: 350000, bodyType: "Sedan", fuelType: "Petrol", transmission: "Automatic", image: "assets/car1.jpg" },
+    { make: "BM2W", model: "X5", year: 2020, price: 800000, bodyType: "SUV", fuelType: "Diesel", transmission: "Automatic", image: "assets/car2.jpg" },
+    { make: "Foddrd", model: "Mustang", year: 2019, price: 950000, bodyType: "Coupe", fuelType: "Petrol", transmission: "Manual", image: "assets/car3.jpg" }
   ];
 
   currentPage = 1;
