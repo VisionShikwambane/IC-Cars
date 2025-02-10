@@ -1,7 +1,7 @@
 <div class="bg-gray-100 text-black">
     <!-- Hero Section -->
     <div class="relative w-full h-[500px]">
-      <img src="assets/car_part_background.jpg" alt="Car Parts" class="w-full h-full object-cover opacity-70" />
+      <img src="assets/car_part_background.jpg" loading="lazy" alt="Car Parts" class="w-full h-full object-cover opacity-70" />
       <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
         <h1 class="text-5xl sm:text-6xl text-gold font-bold drop-shadow-lg animate-fade-in">
           High-Quality Car Parts 🚗🔩
@@ -28,7 +28,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <!-- Car Parts List -->
           <div *ngFor="let part of carParts" class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out animate-slide-up">
-            <img [src]="part.image" [alt]="part.name" class="w-full h-40 object-cover rounded-lg mb-4 shadow-md" />
+            <img [src]="part.image" [alt]="part.name" loading="lazy" class="w-full h-40 object-cover rounded-lg mb-4 shadow-md" />
             <h3 class="text-xl text-gold font-semibold">{{ part.name }}</h3>
             <p class="text-gray-700">{{ part.description }}</p>
           </div>
