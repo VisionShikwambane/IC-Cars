@@ -17,6 +17,10 @@ builder.Services.AddRazorPages();
 builder.Services.AddServices();
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.Configure<S3Settings>(builder.Configuration.GetSection("AWS"));
+
+// Register S3UploadService
+//builder.Services.AddSingleton<S3UploadService>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 {
